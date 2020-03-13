@@ -1,0 +1,9 @@
+#!/bin/bash
+set -e
+
+echo "TODO: https://github.com/awslabs/aws-sam-cli/issues/1641"
+
+sam local start-api \
+  --host '0.0.0.0' \
+  --port 3030 \
+  --docker-volume-basedir $DIDPWD

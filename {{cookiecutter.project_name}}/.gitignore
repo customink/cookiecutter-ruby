@@ -1,0 +1,6 @@
+/.bundle
+/vendor/bundle
+/.aws-sam
+.env.*
+!.env.development
+!.env.test

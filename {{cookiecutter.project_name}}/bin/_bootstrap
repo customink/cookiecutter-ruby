@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+echo '== Creating SAM deployment bucket =='
+
+file=".bucket-name"
+
+if [ ! -f $file ]; then
+  rand=$(ruby -r 'securerandom' -e 'puts(SecureRandom.hex[1,10])')
+  name="cookiecutter-ruby-demo-${rand}"
+  echo -n "$name" > "$file"
+else
+  name=$(cat $file)
+fi
+
+aws s3 mb "s3://${name}"

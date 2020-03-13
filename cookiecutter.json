@@ -1,0 +1,4 @@
+{
+  "project_name": "my_awesome_lambda",
+  "http_api": ["yes", "no"]
+}

@@ -1,0 +1,80 @@
+{
+  "message": {
+    "version": "1.0",
+    "resource": "/",
+    "path": "/test/",
+    "httpMethod": "GET",
+    "headers": {
+      "Content-Length": "0",
+      "Host": "mw69qflegl.execute-api.us-east-1.amazonaws.com",
+      "User-Agent": "curl/7.64.1",
+      "X-Amzn-Trace-Id": "Root=1-5e6a24cc-0f7fddb60009c829de61bd46",
+      "X-Forwarded-For": "72.218.219.201",
+      "X-Forwarded-Port": "443",
+      "X-Forwarded-Proto": "https",
+      "accept": "*/*"
+    },
+    "multiValueHeaders": {
+      "Content-Length": [
+        "0"
+      ],
+      "Host": [
+        "mw69qflegl.execute-api.us-east-1.amazonaws.com"
+      ],
+      "User-Agent": [
+        "curl/7.64.1"
+      ],
+      "X-Amzn-Trace-Id": [
+        "Root=1-5e6a24cc-0f7fddb60009c829de61bd46"
+      ],
+      "X-Forwarded-For": [
+        "72.218.219.201"
+      ],
+      "X-Forwarded-Port": [
+        "443"
+      ],
+      "X-Forwarded-Proto": [
+        "https"
+      ],
+      "accept": [
+        "*/*"
+      ]
+    },
+    "queryStringParameters": null,
+    "multiValueQueryStringParameters": null,
+    "requestContext": {
+      "accountId": "831702759394",
+      "apiId": "mw69qflegl",
+      "domainName": "mw69qflegl.execute-api.us-east-1.amazonaws.com",
+      "domainPrefix": "mw69qflegl",
+      "extendedRequestId": "JRqv6gNzIAMEJMw=",
+      "httpMethod": "GET",
+      "identity": {
+        "accessKey": null,
+        "accountId": null,
+        "caller": null,
+        "cognitoAuthenticationProvider": null,
+        "cognitoAuthenticationType": null,
+        "cognitoIdentityId": null,
+        "cognitoIdentityPoolId": null,
+        "principalOrgId": null,
+        "sourceIp": "72.218.219.201",
+        "user": null,
+        "userAgent": "curl/7.64.1",
+        "userArn": null
+      },
+      "path": "/test/",
+      "protocol": "HTTP/1.1",
+      "requestId": "JRqv6gNzIAMEJMw=",
+      "requestTime": "12/Mar/2020:12:02:20 +0000",
+      "requestTimeEpoch": 1584014540160,
+      "resourceId": null,
+      "resourcePath": "/",
+      "stage": "test"
+    },
+    "pathParameters": null,
+    "stageVariables": null,
+    "body": null,
+    "isBase64Encoded": true
+  }
+}

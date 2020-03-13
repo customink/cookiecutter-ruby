@@ -1,0 +1,54 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: {% include "_cctmp/class_name.txt" %}
+
+Parameters:
+
+  StageEnv:
+    Type: String
+    Default: staging
+    AllowedValues:
+      - test
+      - development
+      - staging
+      - production
+
+Resources:
+
+  {% include "_cctmp/class_name.txt" %}Lambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: .
+      Handler: lib/{% include "_cctmp/file_name.txt" %}.handler
+      Runtime: ruby2.7
+      Timeout: 60
+      MemorySize: 512
+      FunctionName: !Sub {% include "_cctmp/dash_name.txt" %}-${StageEnv}
+      Environment:
+        Variables:
+          STAGE_ENV: !Ref StageEnv
+      {%- if cookiecutter.http_api == "yes" %}
+      Events:
+        {% include "_cctmp/class_name.txt" %}HttpApiProxy:
+          Type: HttpApi
+          Properties:
+            ApiId: !Ref {% include "_cctmp/class_name.txt" %}HttpApi
+      {% endif %}
+
+  {%- if cookiecutter.http_api == "yes" %}
+  {% include "_cctmp/class_name.txt" %}HttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref StageEnv
+  {% endif %}
+
+Outputs:
+
+  {% include "_cctmp/class_name.txt" %}LambdaArn:
+    Description: Lambda Function Arn
+    Value: !GetAtt {% include "_cctmp/class_name.txt" %}Lambda.Arn
+  {% if cookiecutter.http_api == "yes" %}
+  {% include "_cctmp/class_name.txt" %}InvokeUrl:
+    Description: Lambda Invoke URL
+    Value: !Sub "https://${{ "{" }}{% include "_cctmp/class_name.txt" %}HttpApi}.execute-api.${AWS::Region}.amazonaws.com/${StageEnv}/"
+  {% endif %}

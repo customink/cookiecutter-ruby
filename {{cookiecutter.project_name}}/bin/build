@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+export STAGE_ENV=${STAGE_ENV:="production"}
+
+# Clean any previous bundle/builds.
+rm -rf ./.aws-sam \
+       ./.bundle \
+       ./vendor/bundle
+
+# Build SAM
+sam build
+pushd ./.aws-sam/build/{% include "_cctmp/class_name.txt" %}Lambda/
+
+# Clean un-needed artifacts.
+rm -rf \
+  .env.development \
+  .env.test \
+  docker-compose.yml \
+  Dockerfile \
+  README.md \
+  test \
+  tmp \
+  vendor/bundle/ruby/2.7.0/cache
+popd
