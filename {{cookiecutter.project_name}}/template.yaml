@@ -40,6 +40,10 @@ Resources:
     Type: AWS::Serverless::HttpApi
     Properties:
       StageName: !Ref StageEnv
+      Tags:
+        env: !Ref StageEnv
+        group: shared
+        application: {% include "_cctmp/dash_name.txt" %}
   {% endif %}
 
 Outputs:
