@@ -3,8 +3,11 @@ services:
   cicd:
     build: .
     environment:
-      - AWS_PROFILE=${AWS_PROFILE-default}
       - STAGE_ENV=${STAGE_ENV-development}
+      - GITHUB_REPOSITORY=${GITHUB_REPOSITORY}
+      - AWS_PROFILE=${AWS_PROFILE-default}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_DEFAULT_REGION=${AWS_DEFAULT_REGION-us-east-1}
       - SAM_CLI_TELEMETRY=0
       - DIDPWD=${PWD}
