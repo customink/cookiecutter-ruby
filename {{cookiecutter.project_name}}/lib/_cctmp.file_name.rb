@@ -7,6 +7,7 @@ require_relative './{% include "_cctmp/file_name.txt" %}/env'
 # require_relative './{% include "_cctmp/file_name.txt" %}/some_poro
 
 def handler(event:, context:)
+  puts event
   { statusCode: code,
     headers: [{'Content-Type' => 'application/json'}],
     body: JSON.dump(event) }
