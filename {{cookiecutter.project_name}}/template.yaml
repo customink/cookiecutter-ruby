@@ -27,6 +27,7 @@ Resources:
       Environment:
         Variables:
           STAGE_ENV: !Ref StageEnv
+          RUBYOPT: '-W0'
       {%- if cookiecutter.http_api == "yes" %}
       Events:
         {% include "_cctmp/class_name.txt" %}HttpApiProxy:
