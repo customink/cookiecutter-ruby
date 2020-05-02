@@ -8,6 +8,8 @@ if [[ -z ${GITHUB_REPOSITORY+x} || -z $GITHUB_REPOSITORY ]]; then
   if [ ! -f $file ]; then
     rand=$(ruby -r 'securerandom' -e 'puts(SecureRandom.hex[1,10])')
     name="{% include "_cctmp/dash_name.txt" %}-deployment-${rand}"
+    # S3 Name rules - Remove special chars except dash
+    name="$(echo "$name" | sed 's/[^a-zA-Z0-9-]//g')"
     echo -n "$name" > "$file"
   else
     name=$(cat $file)
