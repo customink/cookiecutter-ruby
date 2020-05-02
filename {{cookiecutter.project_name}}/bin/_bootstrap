@@ -7,7 +7,7 @@ if [[ -z ${GITHUB_REPOSITORY+x} || -z $GITHUB_REPOSITORY ]]; then
   file=".bucket-name"
   if [ ! -f $file ]; then
     rand=$(ruby -r 'securerandom' -e 'puts(SecureRandom.hex[1,10])')
-    name="cookiecutter-ruby-demo-${rand}"
+    name="{% include "_cctmp/dash_name.txt" %}-deployment-${rand}"
     echo -n "$name" > "$file"
   else
     name=$(cat $file)
