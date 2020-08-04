@@ -3,7 +3,7 @@
 
 <a href="https://lamby.custominktech.com"><img src="https://user-images.githubusercontent.com/2381/59363668-89edeb80-8d03-11e9-9985-2ce14361b7e3.png" alt="Lamby: Simple Rails & AWS Lambda Integration using Rack." align="right" width="300" /></a>
 
-A demo project to showcase using aws sam cookiecutter project templates to kickstart your lambda projects. [See the full article here on Custom Ink's technology blog](https://technology.customink.com/blog/2020/03/13/using-aws-sam-cookiecutter-project-templates-to-kickstart-your-ambda-projects/).
+A demo project to showcase using aws sam cookiecutter project templates to kickstart your lambda projects. [See the full article here on Custom Ink's technology blog](https://dev.to/metaskills/using-aws-sam-cookiecutter-project-templates-37le).
 
 **[Lamby: Simple Rails & AWS Lambda Integration using Rack.](https://lamby.custominktech.com)**
 
